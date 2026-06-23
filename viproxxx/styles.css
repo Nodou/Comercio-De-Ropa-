@@ -1,0 +1,98 @@
+PONE ESTO EN CSS
+:root {
+    --bg-dark: #0a0a0a;
+    --bg-card: #161616;
+    --bg-input: #222222;
+    --orange-viprox: #FF6B00;
+    --text-white: #FFFFFF;
+    --text-gray: #A0A0A0;
+    --text-muted: #666666;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--bg-card);
+    border-bottom: 2px solid var(--orange-viprox);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-title {
+    font-size: 24px;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+}
+.logo-title span { color: var(--orange-viprox); }
+
+.logo-slogan {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-gray);
+}
+
+nav a {
+    color: var(--text-white);
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: var(--orange-viprox);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.btn-oauth {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #444;
+    padding: 12px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background-color: var(--bg-card);
+    border: 2px solid var(--orange-viprox);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 400px;
+    text-align: center;
+}

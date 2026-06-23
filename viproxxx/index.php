@@ -1,0 +1,160 @@
+<?php
+
+include("config/conexion.php");
+
+$sql = "SELECT * FROM productos ORDER BY id DESC";
+
+$resultado = $conn->query($sql);
+
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viproxxx | Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            background-color: var(--color-oscuro);
+        }
+        .carousel-slide {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slide 12s infinite ease-in-out;
+        }
+        .slide {
+            width: 33.333%;
+            height: 100%;
+            position: relative;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+        .slide-caption {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            color: white;
+            z-index: 10;
+        }
+        .slide-caption h2 { font-size: 3rem; text-transform: uppercase; font-style: italic; }
+        
+        @keyframes slide {
+            0%, 25% { transform: translateX(0); }
+            33%, 58% { transform: translateX(-33.333%); }
+            66%, 91% { transform: translateX(-66.666%); }
+        }
+
+        .products-section { padding: 3rem 2rem; }
+        .products-section h2 { text-align: center; margin-bottom: 2rem; text-transform: uppercase; }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            border: 1px solid #eee;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .product-card img { max-width: 100%; height: auto; }
+        .product-price { color: var(--color-primario); font-weight: bold; font-size: 1.2rem; margin: 0.5rem 0; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="index.php">VIPROXXX</a></div>
+        <nav>
+            <a href="index.php" class="active">Tienda</a>
+            <a href="carrito.php">Carrito</a>
+            <a href="subir-producto.html">Subir Producto</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200" alt="Zapatilla 1">
+                <div class="slide-caption"><h2>Running Elite</h2><p>Superá tus límites</p></div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200" alt="Zapatilla 2">
+                <div class="slide-caption"><h2>Urban Style</h2><p>Estilo para el día a día</p></div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=1200" alt="Zapatilla 3">
+                <div class="slide-caption"><h2>Basketball Pro</h2><p>Dominá la cancha</p></div>
+            </div>
+        </div>
+    </div>
+
+    <main class="products-section">
+        <h2>Nuestras Zapatillas</h2>
+        <div class="products-grid">
+
+<?php while($producto = $resultado->fetch_assoc()) { ?>
+
+    <div class="product-card">
+
+        <img
+        src="uploads/<?php echo $producto['imagen']; ?>"
+        alt="<?php echo $producto['titulo']; ?>">
+
+        <h3>
+            <?php echo $producto['titulo']; ?>
+        </h3>
+
+        <p class="product-price">
+            $<?php echo $producto['precio']; ?>
+        </p>
+
+        <p>
+            Talle:
+            <?php echo $producto['talle']; ?>
+        </p>
+
+        <form
+        action="procesos/agregar-carrito.php"
+        method="POST">
+
+            <input
+            type="hidden"
+            name="producto_id"
+            value="<?php echo $producto['id']; ?>">
+
+            <button
+            type="submit"
+            class="btn-primary">
+
+                Añadir al Carrito
+
+            </button>
+
+        </form>
+
+    </div>
+
+<?php } ?>
+
+</div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 VIPROXXX - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
