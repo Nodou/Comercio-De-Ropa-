@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIPROXXX | Tienda</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="/">
+            <div class="logo-title">VI<span>PRO</span>XXX</div>
+            <div class="logo-slogan">Ropa & Zapatillas</div>
+        </a></div>
+        <nav>
+            <a href="/" class="active">Tienda</a>
+            <a href="/carrito.html">Carrito</a>
+            <a href="/subir-producto.html">Subir Producto</a>
+            <span id="nav-usuario" style="display:none;"></span>
+            <a href="/login.html" id="nav-login">Login</a>
+            <a href="#" id="nav-logout" style="display:none;">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200" alt="Zapatilla 1">
+                <div class="slide-caption"><h2>Running Elite</h2><p>Superá tus límites</p></div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200" alt="Zapatilla 2">
+                <div class="slide-caption"><h2>Urban Style</h2><p>Estilo para el día a día</p></div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=1200" alt="Zapatilla 3">
+                <div class="slide-caption"><h2>Basketball Pro</h2><p>Dominá la cancha</p></div>
+            </div>
+        </div>
+    </div>
+
+    <main class="products-section">
+        <h2>Nuestras <span>Zapatillas</span></h2>
+        <div class="products-grid" id="products-grid">
+            <div class="empty-state">Cargando productos...</div>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="login-required" style="display:none;">
+        <div class="modal-box">
+            <h2 style="margin-bottom:15px;">Iniciá sesión</h2>
+            <p style="color:var(--text-gray); margin-bottom:20px;">Debés iniciar sesión para agregar productos al carrito.</p>
+            <a href="/login-usuario.html" style="text-decoration:none;"><button class="btn-primary">Ir a Iniciar Sesión</button></a>
+            <div style="margin-top:10px;"><a href="/login.html" style="color:var(--orange-viprox); font-size:0.85rem;">Otras opciones</a></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 VIPROXXX - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>
