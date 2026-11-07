@@ -1,0 +1,16 @@
+{
+  "name": "viproxxx",
+  "version": "1.0.0",
+  "description": "Comercio de ropa y zapatillas VIPROXXX - versión Node.js",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["ecommerce", "ropa", "zapatillas"],
+  "license": "MIT"
+}
