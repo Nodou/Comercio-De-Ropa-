@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIPROXXX | Tienda</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="/">
+            <div class="logo-title">VI<span>PRO</span>XXX</div>
+            <div class="logo-slogan">Ropa & Zapatillas</div>
+        </a></div>
+        <nav>
+            <a href="/" class="active">Tienda</a>
+            <a href="/carrito.html">Carrito</a>
+            <a href="/subir-producto.html">Subir Producto</a>
+            <span id="nav-usuario" style="display:none;"></span>
+            <a href="/login.html" id="nav-login">Login</a>
+            <a href="#" id="nav-logout" style="display:none;">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <section class="carousel-container" aria-label="Promociones destacadas">
+        <div class="carousel-slide" id="carousel-slide">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1400" alt="Zapatillas urbanas">
+                <div class="slide-caption">
+                    <p class="eyebrow">Nueva temporada</p>
+                    <h2>Running <span>Elite</span></h2>
+                    <p>Superá tus límites con modelos pensados para rendimiento y estilo.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1400" alt="Zapatillas urbanas">
+                <div class="slide-caption">
+                    <p class="eyebrow">Urban Style</p>
+                    <h2>Estilo <span>Diario</span></h2>
+                    <p>Comodidad premium para moverte por la ciudad con actitud.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=1400" alt="Zapatillas deportivas">
+                <div class="slide-caption">
+                    <p class="eyebrow">Colección Pro</p>
+                    <h2>Dominá <span>La Cancha</span></h2>
+                    <p>Agarre, soporte y diseño para llevar tu juego al siguiente nivel.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-btn prev" id="carousel-prev" aria-label="Slide anterior">&#10094;</button>
+        <button class="carousel-btn next" id="carousel-next" aria-label="Slide siguiente">&#10095;</button>
+        <div class="carousel-dots" id="carousel-dots" aria-label="Indicadores de carrusel"></div>
+    </section>
+
+    <main class="products-section">
+        <h2>Nuestras <span>Zapatillas</span></h2>
+        <p class="section-sub">Hacé clic en un producto para ver el detalle.</p>
+        <div id="shop-mensaje" class="mensaje shop-mensaje" aria-live="polite"></div>
+        <div class="products-grid" id="products-grid">
+            <div class="empty-state">Cargando productos...</div>
+        </div>
+    </main>
+
+    <!-- Modal detalle de producto -->
+    <div id="modal-detalle" class="modal-overlay oculto" aria-hidden="true">
+        <div class="modal-box modal-producto" role="dialog" aria-modal="true" aria-labelledby="modal-nombre">
+            <button id="btn-cerrar-detalle" class="modal-close" aria-label="Cerrar">&times;</button>
+            <div class="modal-grid">
+                <img id="modal-img" src="" alt="Zapatilla">
+                <div class="modal-info">
+                    <p id="modal-marca" class="marca-tag"></p>
+                    <h2 id="modal-nombre"></h2>
+                    <p id="modal-precio" class="product-price"></p>
+                    <p id="modal-desc" class="modal-desc"></p>
+                    <label class="modal-label">Talles Disponibles:</label>
+                    <div id="modal-talles" class="opciones"></div>
+                    <button id="modal-agregar" class="btn-primary" type="button">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="login-required" style="display:none;">
+        <div class="modal-box">
+            <button class="modal-close" id="login-required-close" aria-label="Cerrar">&times;</button>
+            <h2 style="margin-bottom:15px;">Iniciá sesión</h2>
+            <p style="color:var(--text-gray); margin-bottom:20px;">Debés iniciar sesión para agregar productos al carrito.</p>
+            <a href="/login-usuario.html" style="text-decoration:none;"><button class="btn-primary">Ir a Iniciar Sesión</button></a>
+            <div style="margin-top:10px;"><a href="/login.html" style="color:var(--orange-viprox); font-size:0.85rem;">Otras opciones</a></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 VIPROXXX - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>

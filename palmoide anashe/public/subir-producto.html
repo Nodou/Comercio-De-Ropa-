@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIPROXXX | Subir Producto</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="/">
+            <div class="logo-title">VI<span>PRO</span>XXX</div>
+            <div class="logo-slogan">Ropa & Zapatillas</div>
+        </a></div>
+        <nav>
+            <a href="/">Tienda</a>
+            <a href="/carrito.html">Carrito</a>
+            <a href="/subir-producto.html" class="active">Subir Producto</a>
+            <span id="nav-usuario" style="display:none;"></span>
+            <a href="/login.html" id="nav-login">Login</a>
+            <a href="#" id="nav-logout" style="display:none;">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main class="form-container wide">
+        <h2>Publicar Nuevas Zapatillas</h2>
+        <div id="subir-mensaje" class="mensaje"></div>
+
+        <form id="subir-form">
+            <div class="form-group">
+                <label for="titulo">Modelo de la Zapatilla</label>
+                <input type="text" id="titulo" name="titulo" required placeholder="Ej: Nike Air Max 90">
+            </div>
+
+            <div class="form-group">
+                <label for="precio">Precio (USD)</label>
+                <input type="number" id="precio" name="precio" step="0.01" min="0" required placeholder="0.00">
+            </div>
+
+            <div class="form-group">
+                <label for="talle">Talle Disponible (US)</label>
+                <input type="number" id="talle" name="talle" step="0.5" required placeholder="9.5">
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción del Producto</label>
+                <textarea id="descripcion" name="descripcion" rows="4" placeholder="Detalla el estado, materiales, etc."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="imagen">Foto de la Zapatilla</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
+            </div>
+
+            <button type="submit" class="btn-primary">Publicar Producto</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 VIPROXXX - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "titulo": "Nike Air Max 90",
+    "nombre": "Nike Air Max 90",
+    "marca": "Nike",
+    "precio": 120000,
+    "imagen": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
+    "descripcion": "Diseño clásico con cámara de aire visible para máxima comodidad urbana.",
+    "talle": "7 US, 8 US, 8.5 US, 9.5 US",
+    "talles": [
+      "7 US",
+      "8 US",
+      "8.5 US",
+      "9.5 US"
+    ],
+    "usuario_id": 0,
+    "usuario_nombre": "VIPROXXX",
+    "creado": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "titulo": "Adidas Ultraboost",
+    "nombre": "Adidas Ultraboost",
+    "marca": "Adidas",
+    "precio": 145000,
+    "imagen": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=400",
+    "descripcion": "Zapatillas de alto rendimiento con amortiguación de máxima respuesta.",
+    "talle": "8 US, 9 US, 10 US, 11 US",
+    "talles": [
+      "8 US",
+      "9 US",
+      "10 US",
+      "11 US"
+    ],
+    "usuario_id": 0,
+    "usuario_nombre": "VIPROXXX",
+    "creado": "2026-01-01T00:00:00.000Z"
+  }
+]
